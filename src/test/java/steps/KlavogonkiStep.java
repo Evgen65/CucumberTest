@@ -1,7 +1,9 @@
-package step;
+package steps;
 
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
@@ -19,6 +21,11 @@ public class KlavogonkiStep {
 
     private String getCurrentWord(){
         return highlightWord.getText().replaceAll("c", "с").replaceAll("o", "о");
+    }
+
+    @Given("Открываем сайт {string}")
+    public void openWebSite(String url) {
+        Selenide.open(url);
     }
 
     @When("Начинаем игру")
