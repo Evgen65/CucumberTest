@@ -9,7 +9,7 @@ repositories {
     mavenCentral()
 }
 
-//нужно для винды, так как руские шаги не будут найдены
+
 compileJava.options.encoding = 'UTF-8'
 
 tasks.withType(JavaCompile) {
